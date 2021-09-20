@@ -15,7 +15,7 @@ date: "September 28, 2020"
 
 ## Setting up
 
-We will spend most of our time learning about the basics of the shell command-line interface (CLI) by exploring experimental data on the **O2** cluster. So, we will need to log in to this remote compute cluster first before we can start with the basics.
+We will spend most of our time learning about the basics of the shell command-line interface (CLI) by exploring experimental data on the **FASRC** cluster. So, we will need to log in to this remote compute cluster first before we can start with the basics.
 
 Let's take a quick look at the basic architecture of a cluster environment and some cluster-specific jargon prior to logging in.
 
@@ -25,21 +25,21 @@ Let's take a quick look at the basic architecture of a cluster environment and s
 
 The above image reflects the many computers that make up a **"cluster"** of computers. Each individual computer in the cluster is usually a lot more powerful than any laptop or desktop computer we are used to working with, and is referred to as a **"node"** (instead of computer). Each node has a designated role, either for logging in or for performing computational analysis/work. **A given cluster will usually have a few login nodes and several compute nodes.**
 
-The data on a cluster is also stored differently than what we are used to with our laptops and desktops, in that it is not computer- or node-specific storage, but all of the data is available to all the nodes in a cluster. This ensures that you don't have to worry about which node is working on your analysis. ***We will be going into more depth about the cluster architecture, storage systems and best practices on the last day of this workshop.***
+The data on a cluster is also stored differently than what we are used to with our laptops and desktops, in that it is not computer- or node-specific storage, but all of the data is available to all the nodes in a cluster. This ensures that you don't have to worry about which node is working on your analysis. ***We will be going into more depth about the cluster architecture, storage systems and best practices at the end of this workshop.***
 
-### Logging in to O2
+### Logging in to the FASRC cluster
 
-#### O2 accounts
+#### FASRC accounts
 
-For this workshop we will be using training accounts to log in. These have been created for us by the [HMS Research Computing](https://rc.hms.harvard.edu/) (HMS-RC) team, they are the folks that manage the O2 cluster. We will be providing each of you with your own *training* account associated with a password for the duration of this workshop.
+For this workshop we will be using your FASRC cluster account to log in. If you do not already have a cluster account, you can [request one here](https://portal.rc.fas.harvard.edu/request/account/new).
 
-> If you are interested in getting your own personal account on O2, please follow the instructions [provided here](https://wiki.rc.hms.harvard.edu/display/O2/Frequently+Asked+Questions+and+Answers#FrequentlyAskedQuestionsandAnswers-Accountsandloggingin) after this workshop.
+> Without an existing cluster account, this workshop will provide limited value, and accounts can take some time to activate since they require approval from your PI.  For this reason, we recommend having an account prior to attending this workshop.
 
 #### Tool(s) to access remote computers/clusters
 
 **With Mac OS**
 
-Macs have a utility application called "**Terminal**" for performing tasks on the command line (shell), both locally and on remote machines. We will be using it to log into O2. 
+Macs have a utility application called "**Terminal**" for performing tasks on the command line (shell), both locally and on remote machines. We will be using it to log into the FASRC cluster. 
 
 Please find and open the Terminal utility on your computers using the *Spotlight Search* at the top right hand corner of your screen.
 
@@ -55,47 +55,49 @@ Please find and open Git BASH.
 
 Everyone should have their Terminal (or Git BASH Terminal) window open. Using this Terminal window, you can interact with your own computer using bash commands! You see the "$" symbol? That is where you write the "commands" that will be executed by shell (bash in this case) and your computer's kernel. The "$" is called the **"command prompt"**. 
 
-To connect to the login node on O2:
+To connect to the login node on the FASRC cluster:
 
-1. Type in the `ssh` command at the command prompt followed by a space, and then type your username (e.g. rc_training10) plus the address of the cluster `@o2.hms.harvard.edu`. There is no space between the username and the "@" symbol (see below).
+1. Type in the `ssh` command at the command prompt followed by a space, and then type your username (e.g. rc_training10) plus the address of the cluster `@login.rc.fas.harvard.edu`. There is no space between the username and the "@" symbol (see below).
 
 ```bash
-ssh username@o2.hms.harvard.edu
+ssh username@login.rc.fas.harvard.edu
 ```
 
+> **Note to NCF users** - For this workshop, you will be logging into FASRC's main cluster (not the NCF cluster).  Your account will allow you to do this, but please be aware that this is only for the workshop - you should return to the NCF cluster for your lab work.
+
 2. Press the return/enter key and you should receive a prompt for your password. 
-3. Type in your password and note that **the cursor will not move as you type** it in! This is normal and know that the computer is receiving and transmitting your typed password to the remote system, i.e. the O2 cluster.
+3. Type in your password and note that **the cursor will not move as you type** it in! This is normal and know that the computer is receiving and transmitting your typed password to the remote system, i.e. the FASRC cluster.
 4. If this is the first time you are connecting to the cluster, **a warning will pop up** and will ask you if you are sure you want to do this; **type `Yes` or `Y`**. 
 
 > **Tip** - Syntax for all commands on the command-line interface is the command followed by space and then optionally a few arguments.
 
-Once logged in, you should see the O2 icon, some news, and a new command prompt: 
+Once logged in, you should see the name of the FASRC cluster (currently Cannon), some helpful documentation links and news, and a new command prompt: 
 
 ```bash
-[username@login01 ~]$ 
+[username@boslogin01 ~]$ 
 ```
 
-The command prompt on O2 will have some characters before the `$`, something like `[rc_training10@login01 ~]`, this is telling you your username and the name of the login node you have connected to!
+The command prompt on the FASRC cluster will have some characters before the `$`, something like `[jharvard@boslogin01 ~]`, this is telling you your username and the name of the login node you have connected to!
 
 ***Please note that from this point on in the workshop anything we want you to type next to the command prompt will be preceded by the `$` (see below). Please make sure you do not type out (or copy and paste) the `$` at the beginning of a command into the Terminal.***
 
 #### Let's move from the login node to a compute node!
 
-The first command we will run at the command prompt will be to start a so-called "interactive session" on O2. This command will connect us to a compute node, so that all of the commands we run will be processed by a computer designated to do analysis (and not designated to log in users). **Copy and paste the command below.**
+The first command we will run at the command prompt will be to start a so-called "interactive session" on the cluster. This command will connect us to a compute node, so that all of the commands we run will be processed by a computer designated to do analysis (and not designated to log in users). **Copy and paste the command below.**
 
 ```bash
-$ srun --pty -p interactive -t 0-2:30 --mem 1G /bin/bash
+$ salloc -p test -t 0-2:30 --mem 1G
 ```
  
-Press enter, you should see a couple of messages and in a few seconds you should get back the command prompt `$`. Now the string of characters before the command prompt will be different. They should say something like `[rc_training10@compute-a-16-73 ~]`. This is telling you that you are using one of the compute nodes/computer on the cluster now and it is specifying the name of that compute node.
+Press enter, you should see a couple of messages and in a few seconds you should get back the command prompt `$`. Now the string of characters before the command prompt will be different. They should say something like `[jharvard@holy7c24601 ~]`. This is telling you that you are using one of the compute nodes/computer on the cluster now and it is specifying the name of that compute node.
 
 > **Tip** - When you run any command in Shell, the command prompt might disappear and once command has been executed, the prompt is returned. This indicates that Shell is ready to accept another command.
 
-Make sure that your command prompt now contains the word "compute". Once it does, we are ready to copy over some data to work with!
+Make sure that your command prompt now contains the name of a compute node instead of a login node. Once it does, we are ready to copy over some data to work with!
 
 ### Copying example data folder
 
-Now that we are all set up to use O2, the first thing to do is to check if there are any files in the data folder we are currently in. When you log in to a cluster, you will land within a folder designated specifically for your use, and is referred to as your "home directory".
+Now that we are all set up to use the cluster, the first thing to do is to check if there are any files in the data folder we are currently in. When you log in to a cluster, you will land within a folder designated specifically for your use, and is referred to as your "home directory".
 
 Let's list the contents of our home directory using a command called `ls`.
 
@@ -108,10 +110,10 @@ It should show you that you have 0 files, or not show you anything at all becaus
 Let's bring in a data folder from a different location on the cluster to our designated area by using the `cp` command. **Copy and paste the following command** all the way from `cp` and including the period symbol at the end `.`:
 
 ```bash
-$ cp -r /n/groups/hbctraining/unix_lesson/ .
+$ cp -r /n/holylfs05/LABS/hsph_bioinfo/Everyone/Workshops/unix_lesson/ .
 ```
 
->'cp' is the command for copy. This command required you to specify the location of the item you want to copy (/n/groups/hbctraining/unix_lesson/) and the location of the destination (.); please note the space between the 2 in the command. The "-r" is an option that modifies the copy command to do something slightly different than usual. The "." means "here", i.e. the destination location is where you currently are.
+>'cp' is the command for copy. This command required you to specify the location of the item you want to copy (/n/holylfs05/LABS/hsph_bioinfo/Everyone/Workshops/unix_lesson/) and the location of the destination (.); please note the space between the 2 in the command. The "-r" is an option that modifies the copy command to do something slightly different than usual. The "." means "here", i.e. the destination location is where you currently are.
 
 Now let's see if we can see this data folder we brought in and if it can be "listed".
 
@@ -248,7 +250,7 @@ When you log in to a remote computer you land on one of the branches of that tre
 
 > **Tip** - On mac OS, which is a UNIX-based OS, the root level is also "/". 
 >
-> **Tip** - On a windows OS, it is drive specific; "C:\" is considered the default root, but it changes to "D:/", if you are on that drive.
+> **Tip** - On a windows OS, it is drive specific; "C:\" is considered the default root, but it changes to "D:\", if you are on that drive.
 
 ### Paths 
 
