@@ -10,15 +10,15 @@ date: "August 7, 2017"
   - Describe the use of the asterisk `*` wildcard when selecting multiple items
   - List a few shortcuts 
 
-## Are you logged into O2 and on a compute node?
+## Are you logged into the FASRC cluster and on a compute node?
 
-You need to be logged into O2, and be on a compute node to run through this lesson. If you are, please proceed to the next section!
+You need to be logged into the FASRC cluster, and be on a compute node to run through this lesson. If you are, please proceed to the next section!
 
-If you are not logged into O2 or are not on a compute node, please follow the steps below as appropriate:
+If you are not logged into the cluster or are not on a compute node, please follow the steps below as appropriate:
 
-1. Log in using `ssh rc_trainingXX@o2.hms.harvard.edu` and enter your password (HMSXXcluster) (replace the "XX" with the number you were assigned in class) 
-2. Once you are on the login node, use `srun --pty -p interactive -t 0-2:30 --mem 1G /bin/bash` to get on a compute node.
-3. Proceed to the next section once your command prompt has the word `compute` in it.
+1. Log in using `ssh username@login.rc.fas.harvard.edu` and enter your password and two-factor auth code.
+2. Once you are on the login node, use `salloc -p test -t 0-2:30 --mem 1G` to get on a compute node.
+3. Proceed to the next section once your command prompt no longer has the word `login` in it.
 
 ## Saving time with wildcards and other shortcuts 
 
@@ -117,13 +117,13 @@ The shortcut `..` always refers to the parent directory of whatever directory yo
 $ ls ../..
 ```
 
-This prints the contents of `/home/username`, which is two levels above your current directory (your home directory). 
+This prints the contents of `/n/homexx/username`, which is two levels above your current directory (your home directory). 
 
 #### Current directory or "."
 
 Finally, the special directory `.` always refers to your current directory. So, `ls` and `ls .` will do the same thing - they print the contents of the current directory. This may seem like a useless shortcut, but recall that we used it earlier when we copied over the data to our home directory.
 
-To summarize, the commands `ls ~`, `ls ~/.`, and `ls /home/username` all do exactly the same thing. These shortcuts can be convenient when you navigate through directories!
+To summarize, the commands `ls ~` and `ls ~/.` do exactly the same thing. These shortcuts can be convenient when you navigate through directories!
 
 #### Command History
 
