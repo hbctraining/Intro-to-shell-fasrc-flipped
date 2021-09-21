@@ -20,7 +20,7 @@ In this lesson, we are going to learn more about how those permissions are set a
 
 To start, every file and directory on a Unix computer belongs to one owner (referred to as "user") and one group. Along with each file's content, the operating system stores the information about the user and group that own it, i.e. the "metadata" for a given file. 
 
-**Users of a multi-user Unix system (i.e. the O2 cluster) can belong to any number of groups.**
+**Users of a multi-user Unix system (i.e. the FASRC cluster) can belong to any number of groups.**
 
 Let's see what groups we all belong to. Type `groups` into the command prompt.
 
@@ -28,12 +28,10 @@ Let's see what groups we all belong to. Type `groups` into the command prompt.
 $ groups
 ```
 
-Depending on our affiliation, we all belong to at least a couple of groups. Since we are all using training accounts you will likely see the groups listed below:
+Depending on our affiliation, we all belong to at least a couple of groups. You will likely see groups like the following:
 
-* rc_training01 
-* training 
-* genomebrowser-uploads 
-* domain-users
+* cluster_users
+* smith_lab
 
 The user-and-group model means that for each file/directory **every user on the system falls into one of three categories**:
 
@@ -43,21 +41,14 @@ The user-and-group model means that for each file/directory **every user on the 
 
 For each of these three categories, the computer keeps track of whether people in that category can read the file (`r`), write to the file (`w`), or execute the file (i.e., run the program written in it) (`x`). More about this aspect of permissions is coming up later in this lesson.
 
-Let's look at this model in action by running the command `ls -l /n/groups/hbctraining/`, to list the files in that directory:
+Let's look at this model in action by running the command `ls -l /n/holylfs05/LABS/hsph_bioinfo/`, to list the files in that directory:
 
 ```bash
-$ ls -l /n/groups/hbctraining/
-total 30G
-drwxrwsr-x  4 mm573 hbctraining 831 Feb 29  2016 bcbio-rnaseq
-drwxrwsr-x 14 mm573 hbctraining 382 Jul 10 17:03 chip-seq
--rw-r--r--  1 root  hbctraining   0 Apr  5  2015 copy_me.txt
-drwxrwsr-x  3 rsk27 hbctraining 201 Apr  5  2015 exercises
-drwxrwsr-x  6 rsk27 hbctraining 293 Oct 27  2017 for_chipseq
-drwxrwsr-x 14 mm573 hbctraining 494 May 21  2018 intro_rnaseq_hpc
-.
-.
-.
-.
+$ ls -l /n/holylfs05/LABS/hsph_bioinfo/
+total 12
+drwxrwsr-x  3 root hsph_bioinfo 4096 Sep 20 15:13 Everyone
+drwxrws---  5 root hsph_bioinfo 4096 Aug  9 08:56 Lab
+drwxr-s--- 11 root hsph_bioinfo 4096 Jul  9 09:03 Users
 ```
 
 As we have learned, the `-l` flag tells `ls` to give us a long-form listing. Let's take another look at the columns in this output, **starting from the right side moving left**.
@@ -79,16 +70,16 @@ Let's list the contents of the `unix_lesson` directory:
 ```bash
 ls -l ~/unix_lesson/
 
-drwxrwxr-x 2 rc_training01 rc_training01  78 Oct  6 10:57 genomics_data
-drwxrwxr-x 2 rc_training01 rc_training01  73 Oct  6 10:57 other
-drwxrwxr-x 5 rc_training01 rc_training01 302 Oct  6 11:53 raw_fastq
--rw-rw-r-- 1 rc_training01 rc_training01 377 Oct  6 10:57 README.txt
-drwxrwxr-x 2 rc_training01 rc_training01  62 Oct  6 10:57 reference_data
+drwxrwxr-x 2 rkhetani hsph_bioinfo  78 Oct  6 10:57 genomics_data
+drwxrwxr-x 2 rkhetani hsph_bioinfo  73 Oct  6 10:57 other
+drwxrwxr-x 5 rkhetani hsph_bioinfo 302 Oct  6 11:53 raw_fastq
+-rw-rw-r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 README.txt
+drwxrwxr-x 2 rkhetani hsph_bioinfo  62 Oct  6 10:57 reference_data
 ```
 
 Who is the owner of the files in this directory? Which group do the files belong to?
 
-Basically, O2 has you (your account ID) listed both as an owner and a group, and this is usually the assignment for the files and folders in your personal directory. Essentially, when a new user is created on a Unix system, a group of the same name is created and personal files for that user are also "owned" by that user's group.
+The FASRC cluster has you (your account ID) listed as the owner and your lab group as the group, and this is usually the assignment for the files and folders in your personal directory.
 
 ### Interpreting the permissions string
 
@@ -116,7 +107,7 @@ The **first triplet** is the permissions for the file’s **owner (`u`)**. Here,
 rw-
 ```
 
-The **second triplet** shows us the **group's permissions (`g`)**. Here, the group can read and write the file. (In this case the group and the owner are the same so it makes sense that this is the same for both.)
+The **second triplet** shows us the **group's permissions (`g`)**. Here, the group can read and write the file.
 
 ```bash
 rw-
@@ -124,7 +115,7 @@ rw-
 
 The **final triplet** shows us what **everyone else (`o`)** can do. In this case, it's `r--`, so **everyone else** on the system can only read the file's contents. 
 
-> "Everyone" else refers to other users on the system who are not the file's owner, or in the group that the file's belongs to. 
+> "Everyone" else refers to other users on the system who are not the file's owner, or in the group that the file's owner belongs to. 
  
 ```bash
 r--
@@ -155,7 +146,7 @@ Let's make our README.txt file **inaccessible** to all users other than you and 
 ```bash
 $ ls -l ~/unix_lesson/README.txt
 
--rw-rw-r-- 1 rc_training01 rc_training01 377 Oct  6 10:57 ~/unix_lesson/README.txt
+-rw-rw-r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 ~/unix_lesson/README.txt
 ```
 
 ```bash
@@ -163,7 +154,7 @@ $ chmod o-r ~/unix_lesson/README.txt         # the "-" after o denotes removing 
 
 $ ls -l ~/unix_lesson/README.txt
 
--rw-rw---- 1 rc_training01 rc_training01 377 Oct  6 10:57 ~/unix_lesson/README.txt
+-rw-rw---- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 ~/unix_lesson/README.txt
 ```
 
 The `o` signals that we're changing the privileges of "others" which also represents "everyone else" as we have referred to throughout this lesson.
@@ -175,7 +166,7 @@ $ chmod o+r ~/unix_lesson/README.txt         # the "+" after o denotes adding/gi
 
 $ ls -l ~/unix_lesson/README.txt
 
--rw-rw-r-- 1 rc_training01 rc_training01 377 Oct  6 10:57 /home/rsk27/unix_lesson/README.txt
+-rw-rw-r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 /home/rsk27/unix_lesson/README.txt
 ```
 
 If we wanted to make this an executable file for ourselves (the file's owners) we would say `chmod u+x`, where the `u` signals that we are changing permission for the file's owner. To change permissions for the "group", you'd use the letter `g`, e.g. remove write permissions for the group with `chmod g-w`. 
@@ -209,7 +200,7 @@ Which of the following statements is true?
 
 Environment variables are, in short, variables that describe the environment in which programs run, and they are predefined for a given computer or cluster that you are on. You can reset them to customize the environment. 
 
-Let's see the full list of environment variables on O2:
+Let's see the full list of environment variables on the FASRC cluster:
 
 ```bash
 $ env
@@ -236,26 +227,21 @@ You should see the path to your home directory. `$HOME` can be used instead of t
 ```bash
 $ echo $PATH
 
-/n/cluster/bin:/opt/singularity/bin:/usr/local/rvm/gems/ruby-2.4.9/bin:/usr/local/rvm/gems/ruby-2.4.9@global/bin:/usr/local/rvm/rubies/ruby-2.4.9/bin:/n/cluster/bin:/opt/singularity/bin:/usr/local/bin:/usr/bin:/opt/puppetlabs/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/sbin:/home/rc_training01/.local/bin:/home/rc_training01/bin
+/usr/local/bin:/usr/lib64/qt-3.3/bin:/bin:/usr/bin:/opt/dell/srvadmin/bin:/n/home13/rkhetani/.local/bin:/n/home13/rkhetani/bin
 ```
 This output is a lot more complex! Let's break it down. When you look closely at the output of `echo $PATH`, you should a list of full paths separated from each other by a ":". 
 
 Here is the list of paths in a more readable format:
-* `/n/cluster/bin`
-* `/opt/singularity/bin`
-* `/usr/local/rvm/gems/ruby-2.4.9/bin`
-* `/usr/local/rvm/gems/ruby-2.4.9@global/bin`
-* `/usr/local/rvm/rubies/ruby-2.4.9/bin`
-* `/n/cluster/bin:/opt/singularity/bin`
 * `/usr/local/bin`
+* `/usr/lib64/qt-3.3/bin`
+* `/usr/local/bin`
+* `/bin`
 * `/usr/bin`
-* `/opt/puppetlabs/bin`
-* `/usr/local/rvm/bin`
-* `/usr/local/sbin/usr/sbin`
-* `/home/rc_training01/.local/bin`
-* `/home/rc_training01/bin`
+* `/opt/dell/srvadmin/bin`
+* `/n/home13/rkhetani/.local/bin`
+* `/n/home13/rkhetani/bin`
 
-Each of these paths are referring to a directory, in this case a lot of them are named `bin`. 
+Each of these paths are referring to a directory, in this case all of them are named `bin`. 
 
 ### What are all these paths? And what do they represent?
 
@@ -317,20 +303,6 @@ The `export` command:
   * Alternatively, if you use `export PATH=~/opt/bin:$PATH`, the same directory will be added to the beginning of the list. The order determines which directory Shell will look in first to find a program.
   
 This command is often used to add paths to a directory with commands you commonly want to use. 
-
-Let's say you often use the `bowtie2` command for alignment and it exists in `/home/rsk27/installations/alignment_tools/dna/bowtie/`. 
-
-If you want to run this tool, you will have to type:
-
-```bash 
-$ /home/rsk27/installations/alignment_tools/dna/bowtie/bowtie2 <inputfile>
-```
-
-However, if `/home/rsk27/installations/alignment_tools/dna/bowtie` is part of the `$PATH` variable you can instead just type:
-
-```bash
-$ bowtie2 <inputfile>
-```
 
 #### Closer look at the inner workings of the shell, in the context of $PATH
  
