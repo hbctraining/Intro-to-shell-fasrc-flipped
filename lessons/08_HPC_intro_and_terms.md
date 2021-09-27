@@ -1,7 +1,7 @@
 ---
 title: HPC intro
-author: Radhika Khetani, Meeta Mistry, Mary Piper, Jihe Liu
-date: "Thursday, October 8, 2020"
+author: "Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Daniel Caunt, Will Gammerdinger"
+date: "September 2021"
 ---
 
 ## Learning Objectives
@@ -9,7 +9,6 @@ date: "Thursday, October 8, 2020"
 * Describe the basic components of a computer
 * Explain jargon associated with high-performance computing environments
 * Describe compute parallelization
-
 
 ## Computer components
 
