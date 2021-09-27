@@ -1,7 +1,7 @@
 ---
 title: "The Shell"
-author: "Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu"
-date: "September 28, 2020"
+author: "Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Daniel Caunt, Will Gammerdinger"
+date: "September 2021"
 ---
 
 ## Learning Objectives
