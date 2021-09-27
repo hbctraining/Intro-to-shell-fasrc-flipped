@@ -1,7 +1,7 @@
 ---
 title: "Permissions and Environment variables"
-author: "Christina Koch, Radhika Khetani, Meeta Mistry, Mary Piper, Jihe Liu"
-date: "Thursday, October 8, 2020"
+author: "Christina Koch, Radhika Khetani, Meeta Mistry, Mary Piper, Jihe Liu", Daniel Caunt, Will Gammerdinger"
+date: "September 2021"
 ---
 
 Approximate time: 40 minutes
