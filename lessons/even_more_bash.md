@@ -1,7 +1,7 @@
 ---
 title: "Advanced Shell"
-author: "Radhika Khetani, Meeta Mistry"
-date: "May 9, 2018"
+author: "Radhika Khetani, Meeta Mistry, Daniel Caunt"
+date: "September 2021"
 ---
 
 ## Learning Objectives
@@ -20,7 +20,7 @@ As you begin working more with the Shell, you will discover that there are mount
     * [Aliases](#alias) 
 * [Symbolic links](#symlinks)
 * [Transferring files with `rsync`](#rsync)
-    * [Working on `/n/scratch2/`](#nscratch)
+    * [Working on `/n/holyscratch01/`](#nscratch)
 
 ***
 
@@ -69,7 +69,7 @@ This should return to you the list of aliases that have been set for you, and yo
 alias aliasname=value
 ```
 
-When setting an alias **no spaces are permitted around the equal sign**. If value contains spaces or tabs, you must enclose the value within quotation marks. If you look through the list of aliases that have been set for you, `ll` is a good example of this:
+When setting an alias **no spaces are permitted around the equal sign**. If value contains spaces or tabs, you must enclose the value within quotation marks. `ll` is a common alias that people use, and it is a good example of this:
 
 ```bash
 alias ll='ls -l'
@@ -86,21 +86,21 @@ $ vim ~/.bashrc
 Scroll down to the heading "`# User specific aliases and functions`" and on the next line you can set your alias:
 
 ```bash
-o2i='srun --pty -p interactive -t 0-1:00 --mem 1G -c 1 /bin/bash'
+interact='salloc -p test -t 0-1:00 --mem 1G'
 ```
 
-Save and quit. Now we can source the `.bash_profile` file and test it out. By typing `o2i` at the command prompt we will request an interactive session for 12 hours with 8G of memory. You can change the directives to those you use more often (i.e add more cores, increase memory).
+Save and quit. Now we can source the `.bash_profile` file and test it out. By typing `interact` at the command prompt we will request an interactive session for 1 hour with 1G of memory. You can change the directives to those you use more often (i.e add more cores, increase memory).
 
 
 ```bash
 $ source ~/.bash_profile
 
-$ o2i
+$ interact
 ```
 
 ## Symbolic links <a name="symlinks"></a>
 
-The O2 cluster supports symbolic links also known as symlinks. This is a kind of “file” that is **essentially a pointer to another file name**. Symbolic links can be made to directories or across file systems with no restrictions. You can also make a symbolic link to a name which is not the name of any file. (Opening this link will fail until a file by that name is created.) Likewise, if the symbolic link points to an existing file which is later deleted, the symbolic link continues to point to the same file name even though the name no longer names any file.
+The FASRC cluster supports symbolic links also known as symlinks. This is a kind of “file” that is **essentially a pointer to another file name**. Symbolic links can be made to directories or across file systems with no restrictions. You can also make a symbolic link to a name which is not the name of any file. (Opening this link will fail until a file by that name is created.) Likewise, if the symbolic link points to an existing file which is later deleted, the symbolic link continues to point to the same file name even though the name no longer names any file.
 
 Symlinks can be used in lieu of copying over large files. For example, when we began the RNA-seq part of this workshop we had copied over FASTQ files from `~/unix_lesson/raw_fastq` to `~/rnaseq/raw_data`. But what we could have done instead is created symlinks to those files.
 
@@ -130,7 +130,7 @@ $ ll ~/rnaseq/raw_data
 
 ## Transferring files with `rsync` <a name="rsync"></a>
 
-During this workshop we have mostly used Filezilla to transfer files to and from your laptop to the O2 cluster. At the end of the Alignment/Counting lesson we also introduced how to do this on the command line using `scp`. The way `scp` works is it reads the source file and writes it to the destination. It performs a plain linear copy, locally, or over a network.
+During this workshop we have mostly used Filezilla to transfer files to and from your laptop to the FASRC cluster. At the end of the Alignment/Counting lesson we also introduced how to do this on the command line using `scp`. The way `scp` works is it reads the source file and writes it to the destination. It performs a plain linear copy, locally, or over a network.
 
 When **transferring large files or a large number of files `rsync` is a better command** to use. `rsync` employs a special delta transfer algorithm and a few optimizations to make the operation a lot faster. **It will check files sizes and modification timestamps** of both file(s) to be copied and the destination, and skip any further processing if they match. If the destination file(s) already exists, the delta transfer algorithm will **make sure only differences between the two are sent over.**
 
