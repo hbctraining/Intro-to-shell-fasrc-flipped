@@ -1,7 +1,7 @@
 ---
 title: "Bash_extras"
-author: "Radhika Khetani"
-date: 2017-07-06
+author: "Radhika Khetani, Daniel Caunt"
+date: September 2021
 duration: 45
 ---
 
@@ -26,7 +26,7 @@ duration: 45
 $ cd ~/unix_lesson
 
 # Copy over a file
-$ cp /n/groups/hbctraining/ngs-data-analysis-longcourse/unix_lesson/bicycle.txt .
+$ cp /n/holylfs05/LABS/hsph_bioinfo/Everyone/Workshops/bicycle.txt .
 ```
 ***
 
