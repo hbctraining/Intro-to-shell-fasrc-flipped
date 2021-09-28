@@ -31,14 +31,14 @@ Using vim open up the file `sbatch_generate_bad_reads_summary.sh` to make some e
           grep -cH NNNNNNNNNN $filename >> ~/unix_lesson/badreads/badreads.count.summary
       ```
 1. Add SLURM/`sbatch` directives at the top of the script requesting the following resources:
-   * Use partition `priority` (`-p`)
+   * Use partition `test` (`-p`)
    * Request 5 minutes (`-t`)
    * Request 100MB of memory (`--mem`)
    * Request a single core (`-c`)
    
 1. Save the file and exit vim.
 
-### Run the new shell script to start a new job on O2
+### Run the new shell script to start a new job on the FASRC cluster
 1. Run the new script using the `sbatch` command
 
 ### Check the job/run 
