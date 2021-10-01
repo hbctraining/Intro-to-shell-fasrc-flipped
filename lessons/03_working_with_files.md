@@ -1,7 +1,7 @@
 ---
 title: Working with files on the command-line"
-author: "Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu"
-date: "Wednesday October 26, 2016"
+author: "Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Will Gammerdinger"
+date: "October 2021"
 ---
 
 Approximate time: 30 min
@@ -10,7 +10,7 @@ Approximate time: 30 min
 
 * Examine the contents of files
 * Create a new file using the Vim text editor
-* Learn basic operations using the Vim text editor
+* Execute basic operations using the Vim text editor
 
 ## Examining Files
 
@@ -138,7 +138,7 @@ only work with plain character data, not tables, images, or any other media. The
 
 #### GUI text editors
 
-A GUI is an interface that has buttons and menus that you can click on to issue commands to the computer and you can move about the interface just by pointing and clicking. You might be familar with GUI text editors, such as [TextWrangler](http://www.barebones.com/products/textwrangler/), [Sublime](http://www.sublimetext.com/), and [Notepad++](http://notepad-plus-plus.org/), which allow you to write and edit plain text documents. These editors often have features to easily search text, extract text, and highlight syntax from multiple programming languages. They are great tools, but since they are 'point-and-click', we cannot efficiently use them from the command line.
+A GUI is an interface that has buttons and menus that you can click on to issue commands to the computer and you can move about the interface just by pointing and clicking. You might be familar with GUI text editors, such as [BBEdit](http://www.barebones.com/products/bbedit/), [Sublime](http://www.sublimetext.com/), and [Notepad++](http://notepad-plus-plus.org/), which allow you to write and edit plain text documents. These editors often have features to easily search text, extract text, and highlight syntax from multiple programming languages. They are great tools, but since they are 'point-and-click', we cannot efficiently use them from the command line.
 
 #### Command-line editors
 
