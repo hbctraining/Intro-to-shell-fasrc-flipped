@@ -57,7 +57,7 @@ Everyone should have their Terminal (or Git BASH Terminal) window open. Using th
 
 To connect to the login node on the FASRC cluster:
 
-1. Type in the `ssh` command at the command prompt followed by a space, and then type your username (e.g. rc_training10) plus the address of the cluster `@login.rc.fas.harvard.edu`. There is no space between the username and the "@" symbol (see below).
+1. Type in the `ssh` command at the command prompt followed by a space, and then type your username (e.g. jharvard) plus the address of the cluster `@login.rc.fas.harvard.edu`. There is no space between the username and the "@" symbol (see below).
 
 ```bash
 ssh username@login.rc.fas.harvard.edu
@@ -297,8 +297,6 @@ Can we just type `~` instead of `/home/username`?
 You can do a lot more with the idea of stringing together *parent/child* directories. Let's say we want to look at the contents of the `raw_fastq` folder, but do it from our current directory (the home directory. We can use the list command and follow it up with the path to the folder we want to list!
 
 ```bash
-$ cd
-
 $ ls -l ~/unix_lesson/raw_fastq
 ```
 
@@ -449,7 +447,7 @@ $ cp  Mov10_oe_1.subset.fq  Mov10_oe_1.subset-copy.fq
 $ ls -l
 ```
 
-The copy command can also be used for copying over whole directories, but the `-r` argument has to be added after the `cp` command. The `-r` stands for recursively copy everything from the directory and its sub-directories". [We used it earlier when we copied over the `unix_lesson` directory to our home directories]().
+The copy command can also be used for copying over whole directories, but the `-r` argument has to be added after the `cp` command. The `-r` stands for recursively copy everything from the directory and its sub-directories". [We used it earlier when we copied over the `unix_lesson` directory to our home directories](https://github.com/hbctraining/Intro-to-shell-fasrc-flipped/blob/master/lessons/01_the_filesystem.md#copying-example-data-folder).
 
 ### Creating
 
@@ -500,7 +498,7 @@ $ ls
 > **Tip** - You can use move to move a file and rename it at the same time!
 
 **Important notes about `mv`**:
-* When using `mv`, shell will **not** ask if you are sure that you want to "replace existing file" or similar unless you use the -i option. 
+* When using `mv`, shell will **not** ask if you are sure that you want to "replace existing file" or similar unless you use the `-i` option. 
 * Once replaced, it is not possible to get the replaced file back!
 
 ### Removing
