@@ -1,7 +1,7 @@
 ---
 title: "Permissions and Environment variables"
 author: "Christina Koch, Radhika Khetani, Meeta Mistry, Mary Piper, Jihe Liu, Daniel Caunt, Will Gammerdinger"
-date: "September 2021"
+date: "October 2021"
 ---
 
 Approximate time: 40 minutes
@@ -86,7 +86,7 @@ The FASRC cluster has you (your account ID) listed as the owner and your lab gro
 Let's have a closer look at one of those permission strings in the first column for the `README.txt` file:
 
 ```bash
--rw-rw-r--
+-rw-r--r--
 ```
 
 * The first character indicates the type of file. Among the different types, a leading dash (`-`) means a regular file, while a `d` indicates a directory. 
@@ -107,10 +107,10 @@ The **first triplet** is the permissions for the file’s **owner (`u`)**. Here,
 rw-
 ```
 
-The **second triplet** shows us the **group's permissions (`g`)**. Here, the group can read and write the file.
+The **second triplet** shows us the **group's permissions (`g`)**. Here, the group can read the file.
 
 ```bash
-rw-
+r--
 ```
 
 The **final triplet** shows us what **everyone else (`o`)** can do. In this case, it's `r--`, so **everyone else** on the system can only read the file's contents. 
@@ -146,7 +146,7 @@ Let's make our README.txt file **inaccessible** to all users other than you and 
 ```bash
 $ ls -l ~/unix_lesson/README.txt
 
--rw-rw-r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 ~/unix_lesson/README.txt
+-rw-r--r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 ~/unix_lesson/README.txt
 ```
 
 ```bash
@@ -154,7 +154,7 @@ $ chmod o-r ~/unix_lesson/README.txt         # the "-" after o denotes removing 
 
 $ ls -l ~/unix_lesson/README.txt
 
--rw-rw---- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 ~/unix_lesson/README.txt
+-rw-r----- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 ~/unix_lesson/README.txt
 ```
 
 The `o` signals that we're changing the privileges of "others" which also represents "everyone else" as we have referred to throughout this lesson.
@@ -166,7 +166,7 @@ $ chmod o+r ~/unix_lesson/README.txt         # the "+" after o denotes adding/gi
 
 $ ls -l ~/unix_lesson/README.txt
 
--rw-rw-r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 /home/rsk27/unix_lesson/README.txt
+-rw-r--r-- 1 rkhetani hsph_bioinfo 377 Oct  6 10:57 /home/rsk27/unix_lesson/README.txt
 ```
 
 If we wanted to make this an executable file for ourselves (the file's owners) we would say `chmod u+x`, where the `u` signals that we are changing permission for the file's owner. To change permissions for the "group", you'd use the letter `g`, e.g. remove write permissions for the group with `chmod g-w`. 
@@ -311,7 +311,7 @@ Each time you log in to a cluster, or start a new interactive session on a compu
 So, what are these files and where are they located? These are called `.bashrc` and `.bash_profile`, and they are located in your home directory. You can create them if they don't exist, and Shell will use them!
 
 
-Check what hidden files exist in our home directory using the `-a` flag with the `ls` command:
+Check what hidden files (files starting with <kbd>.</kbd>) exist in our home directory using the `-a` flag with the `ls` command:
 
 ```bash
 $ ls -al ~/
