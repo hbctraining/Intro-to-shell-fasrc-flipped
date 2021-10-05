@@ -1,7 +1,7 @@
 ---
 title: HPC intro
 author: "Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Daniel Caunt, Will Gammerdinger"
-date: "September 2021"
+date: "October 2021"
 ---
 
 ## Learning Objectives
@@ -64,7 +64,7 @@ E.g. A cluster “Node” that has eight “quad"-core CPUs, means that node has
 1. A lot of software is designed to work with the resources on an HPC environment and is either unavailable for, or unusable on, a personal computer.
 2. If you are performing analysis on large data files (e.g. high-throughput sequencing data), you should work on the cluster to avoid issues with memory and to get the analysis done a lot faster with the superior processing capacity. Essentially, a cluster has:
     * 100s of cores for processing!
-    * 100s of Gigabytes or Petabytes of storage!
+    * 100s of Terabytes or even Petabytes of storage!
     * 100s of Gigabytes of memory!
 
 ### Parallelization
@@ -79,7 +79,7 @@ Let's start with the most basic idea of processing 1 input file to generate 1 ou
 <img src="../img/serial_hpc_crop.png" width="50">
 </p>
 
-On a cluster we have access to many cores on a single node, so in theory we could split up the analysis of a single file into multiple distinct processes and use as many cores to speed up the generation of an output file. This is called **multithreading**, i.e. using multiple threads or cores. As you can imagine, multithreading can speed up how fast the analysis is performed! In the example below, the input file is analyzed using 8 cores, likely resulting in an 8 fold speed up!
+On the cluster we have access to there are many cores on a single node, so in theory we could split up the analysis of a single file into multiple distinct processes and use as many cores to speed up the generation of an output file. This is called **multithreading**, i.e. using multiple threads or cores. As you can imagine, multithreading can speed up how fast the analysis is performed! In the example below, the input file is analyzed using 8 cores, likely resulting in an 8 fold speed up!
 
 <p align="center">
 <img src="../img/multithreaded_hpc.png" width="450">
@@ -107,7 +107,7 @@ With parallelization, several samples can be analysed at the same time!
 
 We will be going over the specifics of using the FASRC cluster in class. We will discuss:
 * how to use software on the FASRC cluster
-* how to request resources, like cores, memory, time etc. with the *job scheduler* Slurm (Simple Linux Utility for Resource Management)
+* how to request resources, like cores, memory, time etc. with the *job scheduler* Slurm (**S**imple **L**inux **U**tility for **R**esource **M**anagement)
 * best practices (how to be a good cluster citizen)
 * data storage limits
 
