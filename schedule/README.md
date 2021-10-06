@@ -4,8 +4,8 @@
 
 | Time |  Topic  | Instructor |
 |:-----------:|:----------:|:--------:|
-| 9:30 - 10:10 | [Workshop introduction](../lectures/Intro_to_workshop.pdf) | Radhika |
-| 10:10 - 11:40 | [Introduction to Shell](../lessons/01_the_filesystem.md) | Meeta|
+| 9:30 - 10:10 | Workshop introduction | Radhika |
+| 10:10 - 11:40 | [Introduction to Shell](../lessons/01_the_filesystem.md) | Will|
 | 11:40 - 12:00 | Overview of self-learning materials and homework submission | Jihe |
 
 ### Before the next class:
@@ -13,9 +13,9 @@
 1. Please **study the contents** and **work through all the code** within the following lessons:
 
   * [Wildcards and shortcuts in Shell](../lessons/02_wildcards_shortcuts.md)
-  * [Examining and creating files](../lessons/03_working_with_files.md)
-  * [Searching and redirection](../lessons/04_searching_files.md)
-  * [Shell scripts and variables in Shell](../lessons/05_shell-scripts_variable.md)
+  * [Examining and creating files](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/03_working_with_files.html)
+  * [Searching and redirection](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/04_searching_files.html)
+  * [Shell scripts and variables in Shell](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/05_shell-scripts_variable.html)
 
 > **NOTE:** To run through the code above, you will need to be **logged into O2** and **working on a compute node** (i.e. your command prompt should have the word `compute` in it).
 > 1. Log in using `ssh rc_trainingXX@o2.hms.harvard.edu` and enter your password (replace the "XX" in the username with the number you were [assigned in class](https://docs.google.com/spreadsheets/d/1fxpzu5NU20y_Wh4ILZXa9YRh6JzXulTulaoOJ0mmNTs/edit#gid=0)). 
@@ -39,8 +39,8 @@
 
 | Time |  Topic  | Instructor |
 |:-----------:|:----------:|:--------:|
-| 09:30 - 10:45 | Self-learning lessons review | Jihe/Radhika |
-| 10:45 - 12:00 | [Loops and automation](../lessons/06_loops_and_automation.md) | Meeta |
+| 09:30 - 10:45 | Self-learning lessons review | Jihe/Will |
+| 10:45 - 12:00 | [Loops and automation](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/06_loops_and_automation.html) | Radhika |
 
 ### Before the next class:
 
@@ -68,10 +68,10 @@
 | Time |  Topic  | Instructor |
 |:-----------:|:----------:|:--------:|
 | 09:30 - 10:00 | Self-learning lessons review | All |
-| 10:00 - 11:00 | [Introduction to the O2 cluster]()| Radhika |
-| 11:00 - 11:30 | [Exercise](../activities/sbatch_exercise.md) ([answer key](https://raw.githubusercontent.com/hbctraining/Intro-to-shell-flipped/master/activities/sbatch_exercise_answer.txt))| Jihe |
-| 11:30 - 11:45 | [Introduction to the O2 cluster - data storage]()| Meeta |
-| 11:45 - 12:00 | [Wrap up](../lectures/shell-workshop-wrapup.pdf) | Radhika |
+| 10:00 - 11:00 | Introduction to the FAS-RC cluster| Radhika |
+| 11:00 - 11:30 | [Exercise](../activities/sbatch_exercise.md) ([answer key](../activities/sbatch_exercise_answer.txt))| Jihe |
+| 11:30 - 11:45 | [Introduction to the O2 cluster - data storage]()| Will |
+| 11:45 - 12:00 | Wrap up | Radhika |
 
 ***
 
