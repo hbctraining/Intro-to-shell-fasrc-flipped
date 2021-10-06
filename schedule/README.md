@@ -5,8 +5,8 @@
 | Time |  Topic  | Instructor |
 |:-----------:|:----------:|:--------:|
 | 9:30 - 10:10 | Workshop introduction | Radhika |
-| 10:10 - 11:40 | [Introduction to Shell](../lessons/01_the_filesystem.md) | Will|
-| 11:40 - 12:00 | Overview of self-learning materials and homework submission | Jihe |
+| 10:10 - 11:40 | [Introduction to Shell](../lessons/01_the_filesystem.md) | Meeta|
+| 11:40 - 12:00 | Overview of self-learning materials and homework submission | Will |
 
 ### Before the next class:
 
@@ -39,8 +39,8 @@
 
 | Time |  Topic  | Instructor |
 |:-----------:|:----------:|:--------:|
-| 09:30 - 10:45 | Self-learning lessons review | Jihe/Will |
-| 10:45 - 12:00 | [Loops and automation](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/06_loops_and_automation.html) | Radhika |
+| 09:30 - 10:45 | Self-learning lessons review | Radhika/Will |
+| 10:45 - 12:00 | [Loops and automation](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/06_loops_and_automation.html) | Meeta |
 
 ### Before the next class:
 
@@ -69,8 +69,8 @@
 |:-----------:|:----------:|:--------:|
 | 09:30 - 10:00 | Self-learning lessons review | All |
 | 10:00 - 11:00 | Introduction to the FAS-RC cluster| Radhika |
-| 11:00 - 11:30 | [Exercise](../activities/sbatch_exercise.md) ([answer key](../activities/sbatch_exercise_answer.txt))| Jihe |
-| 11:30 - 11:45 | [Introduction to the O2 cluster - data storage]()| Will |
+| 11:00 - 11:30 | [Exercise](../activities/sbatch_exercise.md) ([answer key](../activities/sbatch_exercise_answer.txt))| Will |
+| 11:30 - 11:45 | [Introduction to the O2 cluster - data storage]()| Meeta |
 | 11:45 - 12:00 | Wrap up | Radhika |
 
 ***
