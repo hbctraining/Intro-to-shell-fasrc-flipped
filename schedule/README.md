@@ -17,11 +17,7 @@
   * [Searching and redirection](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/04_searching_files.html)
   * [Shell scripts and variables in Shell](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/05_shell-scripts_variable.html)
 
-> **NOTE:** To run through the code above, you will need to be **logged into O2** and **working on a compute node** (i.e. your command prompt should have the word `compute` in it).
-> 1. Log in using `ssh rc_trainingXX@o2.hms.harvard.edu` and enter your password (replace the "XX" in the username with the number you were [assigned in class](https://docs.google.com/spreadsheets/d/1fxpzu5NU20y_Wh4ILZXa9YRh6JzXulTulaoOJ0mmNTs/edit#gid=0)). 
-> 2. Once you are on the login node, use `srun --pty -p interactive -t 0-2:30 --mem 1G /bin/bash` to get on a compute node.
-> 3. Proceed once your command prompt has the word `compute` in it.
-> 4. If you log out between lessons (using the `exit` command twice), please follow points 1. and 2. above to log back in and get on a compute node when you restart with the self learning.
+> **NOTE:** To run through the code above, you will need to be **logged into the FAS-RC cluster** and **working on a compute node** (i.e. your command prompt should have the word `compute` in it). 
 
 2. **Complete the exercises**:
    * Each lesson above contain exercises; please go through each of them.
@@ -49,7 +45,7 @@
 * [Permissions and Environment Variables](../lessons/07_permissions_and_environment_variables.md)
 * [Introduction to High-performance computing](../lessons/08_HPC_intro_and_terms.md)
 
-> **NOTE:** To run through the code above, you will need to be **logged into O2** and **working on a compute node** (i.e. your command prompt should have the word `compute` in it). For login instructions, please see above.
+> **NOTE:** To run through the code above, you will need to be **logged into the FAS-RC cluster** and **working on a compute node** (i.e. your command prompt should have the word `compute` in it). 
 
 2. **Complete the exercises**:
    * Each lesson above contain exercises; please go through each of them.
