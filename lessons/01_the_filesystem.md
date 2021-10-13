@@ -51,6 +51,10 @@ Please find and open Git BASH.
 
 > **Tip** - Windows users can use another program called [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead of a *bash emulator* to log in to remote machines, but it is a little more involved and has different capabilities. We encourage you to take a look at it, but we will not be covering it in this workshop.
 
+**Two-factor authentication**
+
+Access to the FASRC cluster requires two-factor authentication. Be sure that you have set-up your Duo two-factor authentication using the resources provided [here](https://docs.rc.fas.harvard.edu/kb/duo-mobile/). 
+
 #### Let's log in! 
 
 Everyone should have their Terminal (or Git BASH Terminal) window open. Using this Terminal window, you can interact with your own computer using bash commands! You see the "$" symbol? That is where you write the "commands" that will be executed by shell (bash in this case) and your computer's kernel. The "$" is called the **"command prompt"**. 
@@ -67,7 +71,8 @@ ssh username@login.rc.fas.harvard.edu
 
 2. Press the return/enter key and you should receive a prompt for your password. 
 3. Type in your password and note that **the cursor will not move as you type** it in! This is normal and know that the computer is receiving and transmitting your typed password to the remote system, i.e. the FASRC cluster.
-4. If this is the first time you are connecting to the cluster, **a warning will pop up** and will ask you if you are sure you want to do this; **type `Yes` or `Y`**. 
+4. After a successful password attempt, you will be queired for a "Verification code" which can be found on your Duo App. Note that the two-factor authentication used on the FASRC is different than your Harvard Key. 
+5. If this is the first time you are connecting to the cluster, **a warning will pop up** and will ask you if you are sure you want to do this; **type `Yes` or `Y`**. 
 
 > **Tip** - Syntax for all commands on the command-line interface is the command followed by space and then optionally a few arguments.
 
