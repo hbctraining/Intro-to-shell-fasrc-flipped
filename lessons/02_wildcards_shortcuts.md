@@ -18,7 +18,7 @@ If you are not logged into the cluster or are not on a compute node, please foll
 
 1. Log in using `ssh username@login.rc.fas.harvard.edu` and enter your password and two-factor auth code.
 2. Once you are on the login node, use `salloc -p test -t 0-2:30 --mem 1G` to get on a compute node.
-3. Proceed to the next section once your command prompt no longer has the word `login` in it.
+3. Proceed to the next section once your command prompt **no longer has the word `login`** in it.
 
 ## Saving time with wildcards and other shortcuts 
 
