@@ -149,18 +149,30 @@ Only a certain number of commands can be stored and displayed with the `history`
 
 > **NOTE:** So far we have only run very short commands that have very few or no arguments. It would be faster to just retype it than to check the history. However, as you start to run analyses on the command-line you will find that the commands are longer and more complex, and the `history` command will be very useful then!
 
-#### Cancel a command
+#### Cancel a command or task
 
-Sometimes as you enter a command, you realize that you don't want to continue or run the current line. Instead of deleting everything you have entered (which could be very long), you could quickly cancel the current line and start a fresh prompt with <button>Ctrl</button> + <button>C</button>.
+Sometimes as you enter a command, you realize that you don't want to continue or run the current line. Instead of deleting everything you have entered (which could be very long), you could quickly cancel the current line and start a fresh prompt with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 ```bash
 $ # Run some random words, then hit "Ctrl + C". Observe what happens
 ```
 
+Another useful case for <kbd>Ctrl</kbd> + <kbd>C</kbd> is when a task is running that you would like to stop. In order to illustrate this, we will briefly introduce the `sleep` command. `sleep N` simply pauses your command-line from additional entries for N seconds. If we would like to have the command-line not accept entries for 20 seconds, we could use:
+
+```bash
+$ sleep 20
+```
+
+While, your `sleep` command is running, you may decide that infact you do want to have your command-line back. To terminate the rest of the `sleep` command simply type:
+
+<kbd>Ctrl</kbd> + <kbd>C</kbd>
+
+This should terminate the rest of the `sleep` command. While this use may seem a bit silly, you will likely encounter many scenarios when you accidentally start running a task that you didn't mean to start and <kbd>Ctrl</kbd> + <kbd>C</kbd> can be immensely helpful in stopping it.
+
 **Other handy command-related shortcuts**
 
-- <button>Ctrl</button> + <button>A</button> will bring you to the start of the command you are writing.
-- <button>Ctrl</button> + <button>E</button> will bring you to the end of the command.
+- <kbd>Ctrl</kbd> + <kbd>A</kbd> will bring you to the start of the command you are writing.
+- <kbd>Ctrl</kbd> + <kbd>E</kbd> will bring you to the end of the command.
 
 ****
 
