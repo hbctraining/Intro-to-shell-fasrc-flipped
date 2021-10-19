@@ -49,7 +49,8 @@ By default, there is no built-in Terminal that uses the bash shell on the Window
 
 Please find and open Git BASH.
 
-> **Tip** - Windows users can use another program called [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead of a *bash emulator* to log in to remote machines, but it is a little more involved and has different capabilities. We encourage you to take a look at it, but we will not be covering it in this workshop.
+> **Tip** - Windows users can use another program called [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead of a *bash emulator* to log in to remote machines, but it is a little more involved and has different capabilities. The [FASRC docs](https://docs.rc.fas.harvard.edu/kb/terminal-access/#WINDOWS) has a list of other recommended apps used by the community.
+
 
 **Two-factor authentication**
 
