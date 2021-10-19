@@ -293,7 +293,7 @@ Why is this so?
 
 *This is because `~` = full path to home directory for the user.*
 
-Can we just type `~` instead of `/home/username`?
+Can we just type `~` instead of `/n/homeXX/username`?
 
 *Yes, we can!*
 
