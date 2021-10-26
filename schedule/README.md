@@ -64,9 +64,8 @@
 | Time |  Topic  | Instructor |
 |:-----------:|:----------:|:--------:|
 | 09:30 - 10:00 | Self-learning lessons review | All |
-| 10:00 - 11:00 | Introduction to the FAS-RC cluster | Radhika |
-| 11:00 - 11:30 | [Exercise](../activities/sbatch_exercise.md) ([answer key](../activities/sbatch_exercise_answer.txt))| Will |
-| 11:30 - 11:45 | Introduction to the FAS-RC cluster (contd.) | Meeta |
+| 10:00 - 11:15 | [Introduction to the FAS-RC cluster](../lectures/HPC_intro_fasrc_oct2021_wide.pdf) | Radhika |
+| 11:15 - 11:45 | [Exercise](../activities/sbatch_exercise.md) ([answer key](../activities/sbatch_exercise_answer.txt))| Will |
 | 11:45 - 12:00 | [Wrap up](../lectures/shell-workshop-wrapup.pdf) | Radhika |
 
 ***
