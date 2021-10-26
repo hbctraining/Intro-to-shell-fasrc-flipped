@@ -3,7 +3,7 @@
 Convert existing script to a batch script and run it using the `sbatch` command from Slurm
 
 ### Set up
-1. Locate the file `generate_bad_reads_summary.sh` (which was created in the [Loops and Automation lesson](../lessons/06_loops_and_automation.md))
+1. Locate the file `generate_bad_reads_summary.sh` (which was created in the [Loops and Automation lesson](https://hbctraining.github.io/Intro-to-shell-flipped/lessons/06_loops_and_automation.html))
 > *Hint: This file is likely in your `badreads` directory.*
 ```bash
 cd ~/unix_lesson/badreads
