@@ -8,9 +8,9 @@ Approximate time: 40 minutes
 
 ## Learning Objectives
  
-* Grant or restrict access to files on a multi-user UNIX system
-* View "Environment Variables" in Shell
-* Describe $PATH and how to append it
+- Grant or restrict access to files on a multi-user UNIX system
+- View "Environment Variables" in Shell
+- Describe the $PATH variable and how to append it
 
 ## Permissions
 
