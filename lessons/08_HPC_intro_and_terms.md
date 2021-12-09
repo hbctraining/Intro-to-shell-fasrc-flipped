@@ -6,9 +6,8 @@ date: "October 2021"
 
 ## Learning Objectives
 
-* Describe the basic components of a computer
-* Explain jargon associated with high-performance computing environments
-* Describe compute parallelization
+- Describe the basic components of a computer and high-performance computing cluster
+- Diffentiate between running tasks in serial versus parallel
 
 ## Computer components
 
