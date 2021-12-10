@@ -1,4 +1,4 @@
-# Introduction to Shell and Cluster computing (HMS-RC's O2 cluster)
+# Introduction to Shell and Cluster computing (FAS-RC's compute cluster)
 
 ## Learning Objectives
 
