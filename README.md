@@ -1,4 +1,4 @@
-# Introduction to the command line interface (shell/bash/Unix/Linux)
+# Shell for Bioinformatics
 
 | Audience | Computational skills required | Duration |
 :----------|:-------------|:----------|
